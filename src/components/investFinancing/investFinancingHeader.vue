@@ -34,16 +34,15 @@
     
             </div>
        </div>
-        <!-- <div class="TabCotent" v-if="Tabindex ==0">
-              
+        <div class="TabCotent">
+            <investFinancingList v-for = "item in FilterList" :key="item.name" :FilterListItems="item"></investFinancingList>
         </div>
-        <div class="TabCotent" v-if="Tabindex == 1">
-                
+        <!-- <div class="TabCotent" v-if="Tabindex == 1">
+                1
         </div>
         <div class="TabCotent" v-if="Tabindex ==2">
-                
+                2
         </div> -->
-       <investFinancingList></investFinancingList>
         <!-- 侧面筛选弹框 -->
         <popup position="right" v-model="show">
            <investTinancingRightPopup :show="show" v-on:changestate = "changestateChild" v-on:changesSubmit ="changesSubmitChild"></investTinancingRightPopup>
@@ -71,6 +70,11 @@ export default {
     },
     beforeMount () {
          this.$store.dispatch("InvestMethodsFilter",this.Tabindex);
+    },
+    computed: {
+        FilterList(){
+            return this.$store.state.investFinancing.filterItem.items
+        }
     },
     methods: {
         switchTabItem (index) {

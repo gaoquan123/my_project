@@ -16,22 +16,24 @@ const state = {
             instal_type:"all" ,
             subjectType: "all",
             transferMoneyLimit: "all",
-         }
+         },
+         filterItem:{}
 
 }
 const getters = {
 
 }
 const mutations = {
-    setI(state,playload){
-    //     console.log(state,"666")
-    //     console.log(playload,"9999")
+    SETINVESTFILTER(state,playload){
+      playload.items.map((item)=>{
+        let allAmount = item.amount.amount;                     //  总金额
+        // let doneAmount = item.currentInvestmentAmount.amount;   //  已投资
+        let remainingAmount = item.remainingAmount.amount;      // 剩余金额
+        item.togeNumber = parseInt(100 - (remainingAmount / allAmount * 100))
+        item.TabIndex = state.TabIndex;
 
-    //     // console.log(state.TabIndex,"999")
-    //     // axios.get('/api/subjects/app-channel-revision', {params: state.data}).then((res) => {
-    //     //    commit('setInfo',res)
-    //     // })
-    
+       })
+       state.filterItem = playload
     }
      
 }
@@ -48,7 +50,7 @@ const actions = {
             Url =' /api/subjects/financial-transfer-list';
         }
         axios.get(Url, {params: state.params}).then((res) => {
-           commit('setI',res.data)
+           commit('SETINVESTFILTER',res.data)
         })
     
     }

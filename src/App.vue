@@ -28,6 +28,9 @@ export default {
 </script>
 
 <style scpoed lang="less">
+.app-content{
+    margin-bottom: 3rem;
+}
 .m-b-05{margin-bottom: 0.5rem};
 .m-b-08{margin-bottom: 0.8rem};
 .m-b-1{margin-bottom: 1rem};
@@ -94,19 +97,26 @@ export default {
 .p-l-5{padding-left: 5rem};
 .fl{float:left}
 .fr{float:right}
+.w5{width:5%}
 .w10{width:10%}
+.w15{width:15%}
 .w20{width:20%}
 .w25{width:25%}
 .w30{width:30%}
 .w33{width:33%}
+.w35{width:35%}
 .w40{width:40%}
+.w45{width:45%}
 .w50{width:50%}
+.w55{width:55%}
 .w60{width:60%}
+.w65{width:65%}
 .w70{width:70%}
+.w75{width:75%}
 .w80{width:80%}
-.w90{width:90%}
 .w85{width:85%}
-.w15{width:15%}
+.w90{width:90%}
+.w95{width:95%}
 
 .w100{width:100%}
 .h10{height: 10%};
@@ -146,7 +156,7 @@ export default {
     overflow: hidden;
 }
 .jia-tag{
-    border: 1px solid #ffa365;
+    border: 1px solid #ff6600;
     color: #ff6600;
     background-color: #fff4f0;
     padding: 0 4px;
