@@ -53,8 +53,8 @@
 <script>
 import Vue from 'Vue'
 import {Tab, TabItem,LoadingPlugin,Popup} from 'vux'
-import investTinancingRightPopup from './investTinancingRightPopup'
-import investFinancingList from './investFinancingList'
+import investTinancingRightPopup from './InvestTinancingRightPopup'
+import investFinancingList from './InvestFinancingList'
 Vue.use(LoadingPlugin)   //懒加载
 export default {
     data () {
@@ -74,12 +74,16 @@ export default {
     computed: {
         FilterList(){
             return this.$store.state.investFinancing.filterItem.items
+        },
+        detailIndex(){
+            return this.$store.state.investFinancing.TabIndex
         }
+
     },
     methods: {
         switchTabItem (index) {
             Vue.$vux.loading.show({
-                text: 'loading'
+                text: '努力加载中...'
             })
             setTimeout(() => {
                 Vue.$vux.loading.hide()

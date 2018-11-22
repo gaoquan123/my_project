@@ -72,7 +72,6 @@ export default {
     .homeMenu{
         width: 100%;
         height: 100%;
-        margin-bottom: 50px;
         // 论坛专区
         .home_forum{
                 width: 100%;

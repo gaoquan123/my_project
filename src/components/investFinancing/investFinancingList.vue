@@ -66,7 +66,7 @@
     .investList_recommend{
         margin-top: 0.5rem;
         width: 100%;
-        height:8rem;
+        height:8.5rem;
         padding-left:0.7rem;
         background: #fff;
         .recommend_header_title{

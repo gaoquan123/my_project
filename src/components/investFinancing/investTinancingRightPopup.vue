@@ -92,6 +92,12 @@ export default {
     },
     beforeMount(){
     },
+    computed: {
+        detailIndex(){
+           return this.$store.state.investFinancing.TabIndex
+        }
+
+    },
     methods: {
        changes() {
           this.$emit("changestate",true)
@@ -125,7 +131,7 @@ export default {
         this.$store.state.investFinancing.params.graceDaysLimit = this.jonsItem.graceDaysLimit;
         this.$store.state.investFinancing.params.AnnualRateLimit = this.jonsItem.AnnualRateLimit;
         this.$store.state.investFinancing.params.instal_type = this.jonsItem.instal_type;
-        this.$store.dispatch("InvestMethodsFilter",this.Tabindex);
+        this.$store.dispatch("InvestMethodsFilter",this.detailIndex);
         this.$emit("changesSubmit",true)
        }
     },

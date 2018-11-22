@@ -34,6 +34,7 @@ const mutations = {
 
        })
        state.filterItem = playload
+       console.log(state.TabIndex)
     }
      
 }

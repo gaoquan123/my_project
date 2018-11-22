@@ -19,6 +19,7 @@
                      <span :class="{'active':activeIndex == 3}">我的账户</span> 
                 </router-link>
             </ul>
+
     </div> 
 </template>
 <script>
@@ -35,6 +36,7 @@
       },
      beforeMount () {
             let path = this.$route.path;
+            console.log(path)
             switch (path) {
                 case "/":
                     this.activeIndex = 1;
@@ -48,10 +50,7 @@
                 default:
                     break;
             }
-      },
-      components:{
-    
-         }
+      }
     }
 </script>
 <style spcoed lang="less">
